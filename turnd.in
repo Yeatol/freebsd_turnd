@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: turnd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# turnd_enable (bool): Set to YES to enable turnd. Default: NO.
+# turnd_pidfile (path): Supervisor PID file. Default: /var/run/turnd.pid.
+
+. /etc/rc.subr
+
+name="turnd"
+rcvar="turnd_enable"
+
+load_rc_config ${name}
+
+: ${turnd_enable:="NO"}
+: ${turnd_pidfile:="/var/run/${name}.pid"}
+
+pidfile="${turnd_pidfile}"
+command="/usr/sbin/daemon"
+required_files="%%PREFIX%%/sbin/${name}"
+command_args="-f -R 5 -P ${pidfile} -t ${name} %%PREFIX%%/sbin/${name}"
+
+run_rc_command "$1"

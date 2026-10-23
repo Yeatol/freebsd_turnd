@@ -87,6 +87,7 @@ This installs the `turnd` executable to `/usr/local/sbin/turnd` and the
 The `turnd.in` template is processed during the build to generate the rc.d
 service script, which is installed as part of `make install`. The generated
 script uses FreeBSD's `daemon(8)` utility to run and manage `turnd` as a service.
+The service runs the `turnd` process as the `nobody` user.
 Manage it using standard FreeBSD service controls such as:
 
 ```sh

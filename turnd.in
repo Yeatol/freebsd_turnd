@@ -20,6 +20,6 @@ load_rc_config ${name}
 pidfile="${turnd_pidfile}"
 command="/usr/sbin/daemon"
 required_files="%%PREFIX%%/sbin/${name}"
-command_args="-f -R 5 -P ${pidfile} -t ${name} %%PREFIX%%/sbin/${name}"
+command_args="-f -R 5 -P ${pidfile} -t ${name} -u nobody %%PREFIX%%/sbin/${name}"
 
 run_rc_command "$1"

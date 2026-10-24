@@ -1,5 +1,7 @@
 # turnd
 
+[![FreeBSD port version](https://repology.org/badge/version-for-repo/freebsd/turnd.svg)](https://www.freshports.org/net/turnd/)
+
 Minimal NAT traversal and UDP relay server for FreeBSD,
 built with a custom protocol inspired by STUN (RFC 8489) / TURN (RFC 8656) standards.
 
